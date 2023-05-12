@@ -87,14 +87,38 @@ modules:
       - -DWITH_WIN32UI=OFF
       - -DWITH_OPENCL=OFF
 
+  - name: exiv2
+    buildsystem: cmake-ninja
+    builddir: true
+    sources:
+      - type: archive
+        url: https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.0.zip
+        sha256: d8f7f9a2486f552e30932610ce60764837da389e6be3b1c8bf767a59eb452aa7
+    cleanup:
+      - /include
+      - /lib
+      - /share/man
+    post-install:
+      - install -D -m 644 -T ../COPYING $FLATPAK_DEST/share/xpano/licenses/exiv2-license.txt
+    config-opts:
+      - -DBUILD_SHARED_LIBS=OFF
+      - -DEXIV2_ENABLE_PNG=OFF
+      - -DEXIV2_ENABLE_XMP=OFF
+      - -DEXIV2_ENABLE_BMFF=OFF
+      - -DEXIV2_ENABLE_BROTLI=OFF
+      - -DEXIV2_ENABLE_VIDEO=OFF
+      - -DEXIV2_ENABLE_INIH=OFF
+      - -DEXIV2_BUILD_EXIV2_COMMAND=OFF
+      - -DEXIV2_BUILD_SAMPLES=OFF
+
   - name: xpano
     buildsystem: cmake-ninja
     builddir: true
     sources: 
       - type: git
         url: https://github.com/krupkat/xpano
-        tag: "v0.13.0"
-        commit: b216075d7ad8dfd31bc56acf1bd17cb221ad005e
+        tag: "v0.14.0"
+        commit: 43d13d3336fa5d2183fa1e11d8df0918a2e6f577
     config-opts:
       - -DNFD_PORTAL=ON
     post-install:
