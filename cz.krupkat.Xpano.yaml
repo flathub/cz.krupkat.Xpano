@@ -1,6 +1,6 @@
 app-id: cz.krupkat.Xpano
 runtime: org.freedesktop.Platform
-runtime-version: '22.08'
+runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
 command: Xpano
 rename-icon: xpano
@@ -33,8 +33,8 @@ modules:
     builddir: true
     sources:
       - type: archive
-        url: https://github.com/opencv/opencv/archive/refs/tags/4.8.0.zip
-        sha256: 9dc6a9a95edc133e165e9f6db9412dd899e28d4e5e4979f17cb5966f4b7f3fb1
+        url: https://github.com/opencv/opencv/archive/refs/tags/4.8.1.zip
+        sha256: b0383d3655afafd34c27fe11cb17d448df0a5392bd7c5629f9991a80f5841dbc
     cleanup:
       - /bin
       - /include
