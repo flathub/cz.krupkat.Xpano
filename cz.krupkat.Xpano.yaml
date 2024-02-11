@@ -21,7 +21,7 @@ modules:
     sources:
       - type: archive
         url: https://github.com/gabime/spdlog/archive/refs/tags/v1.13.0.zip
-        sha256: 9F6763BB76FFF7DB371F5733626C83352EDD7C57899501AB00248FAFAD9CC504
+        sha256: 9f6763bb76fff7db371f5733626c83352edd7c57899501ab00248fafad9cc504
     cleanup:
       - /lib
       - /include
@@ -34,7 +34,7 @@ modules:
     sources:
       - type: archive
         url: https://github.com/opencv/opencv/archive/refs/tags/4.9.0.zip
-        sha256: 9B5B64D50BF4A3DDEAB430A9B13C5F9E023C9E67639AB50A74D0C298B5A61B74
+        sha256: 9b5b64d50bf4a3ddeab430a9b13c5f9e023c9e67639ab50a74d0c298b5a61b74
     cleanup:
       - /bin
       - /include
@@ -93,7 +93,7 @@ modules:
     sources:
       - type: archive
         url: https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.1.zip
-        sha256: EAB4C4B919930905E2128C56CB15919CB8105D431CCEF8712F98FD4871F3D09A
+        sha256: eab4c4b919930905e2128c56cb15919cb8105d431ccef8712f98fd4871f3d09a
     cleanup:
       - /include
       - /lib
