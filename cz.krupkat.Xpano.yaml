@@ -20,8 +20,8 @@ modules:
     builddir: true
     sources:
       - type: archive
-        url: https://github.com/gabime/spdlog/archive/refs/tags/v1.12.0.zip
-        sha256: 6174bf8885287422a6c6a0312eb8a30e8d22bcfcee7c48a6d02d1835d7769232
+        url: https://github.com/gabime/spdlog/archive/refs/tags/v1.13.0.zip
+        sha256: 9f6763bb76fff7db371f5733626c83352edd7c57899501ab00248fafad9cc504
     cleanup:
       - /lib
       - /include
@@ -33,8 +33,8 @@ modules:
     builddir: true
     sources:
       - type: archive
-        url: https://github.com/opencv/opencv/archive/refs/tags/4.8.1.zip
-        sha256: b0383d3655afafd34c27fe11cb17d448df0a5392bd7c5629f9991a80f5841dbc
+        url: https://github.com/opencv/opencv/archive/refs/tags/4.9.0.zip
+        sha256: 9b5b64d50bf4a3ddeab430a9b13c5f9e023c9e67639ab50a74d0c298b5a61b74
     cleanup:
       - /bin
       - /include
@@ -92,8 +92,8 @@ modules:
     builddir: true
     sources:
       - type: archive
-        url: https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.0.zip
-        sha256: d8f7f9a2486f552e30932610ce60764837da389e6be3b1c8bf767a59eb452aa7
+        url: https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.1.zip
+        sha256: eab4c4b919930905e2128c56cb15919cb8105d431ccef8712f98fd4871f3d09a
     cleanup:
       - /include
       - /lib
@@ -117,8 +117,8 @@ modules:
     sources: 
       - type: git
         url: https://github.com/krupkat/xpano
-        tag: "v0.17.0"
-        commit: 092acbefaa9ce4d2b5eafea654454dc72e4320a8
+        tag: "v0.18.0"
+        commit: 552c9a11056c0dee35704cb49adaf853563bfe9c
     config-opts:
       - -DNFD_PORTAL=ON
     post-install:
