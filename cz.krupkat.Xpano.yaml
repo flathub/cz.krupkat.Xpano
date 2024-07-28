@@ -119,6 +119,8 @@ modules:
         url: https://github.com/krupkat/xpano
         tag: "v0.19.0"
         commit: 5e626f66d2670a7f3fd04e805610ef98a506e401
+      - type: patch
+        path: 0001-fix-manifest-caption.patch
     config-opts:
       - -DNFD_PORTAL=ON
     post-install:

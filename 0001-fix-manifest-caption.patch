@@ -1,0 +1,28 @@
+diff --git a/misc/build/linux/cz.krupkat.Xpano.metainfo.xml b/misc/build/linux/cz.krupkat.Xpano.metainfo.xml
+index 91dca17..181631f 100644
+--- a/misc/build/linux/cz.krupkat.Xpano.metainfo.xml
++++ b/misc/build/linux/cz.krupkat.Xpano.metainfo.xml
+@@ -21,6 +21,7 @@
+   <screenshots>
+     <screenshot type="default">
+       <image>https://raw.githubusercontent.com/krupkat/xpano/main/misc/screenshots/xpano.jpg</image>
++      <caption>Xpano interface after loading 200 images</caption>
+     </screenshot>
+   </screenshots>
+   <url type="homepage">https://krupkat.github.io/xpano/</url>
+@@ -49,12 +50,9 @@
+     <release version="0.18.0" date="2024-02-11">
+       <description>
+         <ul>
+-          <li>Panorama adjustments
+-            <ul>
+-              <li>Drag the panorama by its horizontal / vertical axis</li>
+-              <li>Rotate the panorama by its center point</li>
+-            </ul>
+-          </li>
++          <li>Panorama adjustments</li>
++          <li>Drag the panorama by its horizontal / vertical axis</li>
++          <li>Rotate the panorama by its center point</li>
+         </ul>
+       </description>
+     </release>
