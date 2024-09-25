@@ -1,6 +1,6 @@
 app-id: cz.krupkat.Xpano
 runtime: org.freedesktop.Platform
-runtime-version: '23.08'
+runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 command: Xpano
 rename-icon: xpano
@@ -92,8 +92,8 @@ modules:
     builddir: true
     sources:
       - type: archive
-        url: https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.2.zip
-        sha256: d93d5fd8d9daa0f8a2e1b63300cba9eafd99974baba00157ba8f6ee47a4c88c2
+        url: https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.3.zip
+        sha256: 8d52df122b113d66889c147505ade41ff1a6396e9e467db43f7dd6712d98226d
     cleanup:
       - /include
       - /lib
