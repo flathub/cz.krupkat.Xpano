@@ -13,8 +13,6 @@ finish-args:
   - --device=dri
 
 modules:
-  - shared-modules/SDL2/SDL2-with-libdecor.json
-
   - name: spdlog
     buildsystem: cmake-ninja
     builddir: true
@@ -117,10 +115,8 @@ modules:
     sources: 
       - type: git
         url: https://github.com/krupkat/xpano
-        tag: "v0.19.0"
-        commit: 5e626f66d2670a7f3fd04e805610ef98a506e401
-      - type: patch
-        path: 0001-fix-manifest-caption.patch
+        tag: "v0.19.2"
+        commit: 5cc00c8bb67e005f38c8768514a6eade5f29749c
     config-opts:
       - -DNFD_PORTAL=ON
     post-install:
