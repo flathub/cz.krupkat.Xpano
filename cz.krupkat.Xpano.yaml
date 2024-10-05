@@ -115,8 +115,8 @@ modules:
     sources: 
       - type: git
         url: https://github.com/krupkat/xpano
-        tag: "v0.19.2"
-        commit: 5cc00c8bb67e005f38c8768514a6eade5f29749c
+        tag: "v0.19.3"
+        commit: 11a00d4ae964dabb7811412312ba69dea6522220
     config-opts:
       - -DNFD_PORTAL=ON
     post-install:
