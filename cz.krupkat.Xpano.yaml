@@ -1,6 +1,6 @@
 app-id: cz.krupkat.Xpano
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 command: Xpano
 rename-icon: xpano
@@ -119,5 +119,3 @@ modules:
         commit: 11a00d4ae964dabb7811412312ba69dea6522220
     config-opts:
       - -DNFD_PORTAL=ON
-    post-install:
-      - install -D -m 644 -T /usr/share/licenses/SDL2/LICENSE.txt $FLATPAK_DEST/share/xpano/licenses/sdl2-license.txt
