@@ -119,10 +119,3 @@ modules:
         commit: 11a00d4ae964dabb7811412312ba69dea6522220
     config-opts:
       - -DNFD_PORTAL=ON
-    post-install:
-        - |
-        if [ -f /usr/share/licenses/SDL2/LICENSE.txt ]; then
-          install -D -m 644 -T /usr/share/licenses/SDL2/LICENSE.txt $FLATPAK_DEST/share/xpano/licenses/sdl2-license.txt
-        else
-          echo "SDL2 license not found at /usr/share/licenses/SDL2/LICENSE.txt; skipping"
-        fi
