@@ -105,6 +105,8 @@ modules:
   - name: xpano
     buildsystem: cmake-ninja
     builddir: true
+    post-install:
+      - mv /app/share/xpano/licenses/ /app/share/licenses/xpano/
     sources:
       - type: git
         url: https://github.com/krupkat/xpano
