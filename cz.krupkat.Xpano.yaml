@@ -1,17 +1,22 @@
 app-id: cz.krupkat.Xpano
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
+runtime-version: '26.08'
 sdk: org.freedesktop.Sdk
 command: Xpano
 rename-icon: xpano
 rename-desktop-file: xpano.desktop
-
 finish-args:
   - --socket=wayland
   - --socket=fallback-x11
   - --share=ipc
   - --device=dri
-
+cleanup:
+  - /include
+  - /lib/pkgconfig
+  - /lib/cmake
+  - /share/man
+  - '*.la'
+  - '*.a'
 modules:
   - name: spdlog
     buildsystem: cmake-ninja
@@ -20,11 +25,6 @@ modules:
       - type: archive
         url: https://github.com/gabime/spdlog/archive/refs/tags/v1.14.1.zip
         sha256: 429dfdf3afc1984feb59e414353c21c110bc79609f6d7899d52f6aa388646f6d
-    cleanup:
-      - /lib
-      - /include
-    post-install:
-      - install -D -m 644 -T ../LICENSE $FLATPAK_DEST/share/xpano/licenses/spdlog-license.txt
 
   - name: opencv
     buildsystem: cmake-ninja
@@ -35,12 +35,7 @@ modules:
         sha256: 3810bca2b1d1c572912df0ac3888126341f3762dfd28e91068c805fb656d0e51
     cleanup:
       - /bin
-      - /include
-      - /lib
       - /share/opencv4
-    post-install:
-      - install -D -m 644 -T ../LICENSE $FLATPAK_DEST/share/xpano/licenses/opencv-license.txt
-      - mv $FLATPAK_DEST/share/licenses/opencv4/* $FLATPAK_DEST/share/xpano/licenses
     config-opts:
       - -DBUILD_SHARED_LIBS=OFF
       - -DBUILD_opencv_apps=OFF
@@ -88,16 +83,6 @@ modules:
   - name: exiv2
     buildsystem: cmake-ninja
     builddir: true
-    sources:
-      - type: archive
-        url: https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.3.zip
-        sha256: 8d52df122b113d66889c147505ade41ff1a6396e9e467db43f7dd6712d98226d
-    cleanup:
-      - /include
-      - /lib
-      - /share/man
-    post-install:
-      - install -D -m 644 -T ../COPYING $FLATPAK_DEST/share/xpano/licenses/exiv2-license.txt
     config-opts:
       - -DBUILD_SHARED_LIBS=OFF
       - -DEXIV2_ENABLE_PNG=OFF
@@ -108,16 +93,20 @@ modules:
       - -DEXIV2_ENABLE_INIH=OFF
       - -DEXIV2_BUILD_EXIV2_COMMAND=OFF
       - -DEXIV2_BUILD_SAMPLES=OFF
+    sources:
+      - type: archive
+        url: https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.3.zip
+        sha256: 8d52df122b113d66889c147505ade41ff1a6396e9e467db43f7dd6712d98226d
 
   - name: xpano
     buildsystem: cmake-ninja
     builddir: true
-    sources: 
-      - type: git
-        url: https://github.com/krupkat/xpano
-        tag: "v0.19.3"
-        commit: 11a00d4ae964dabb7811412312ba69dea6522220
     config-opts:
       - -DNFD_PORTAL=ON
     post-install:
-      - install -D -m 644 -T /usr/share/licenses/SDL2/LICENSE.txt $FLATPAK_DEST/share/xpano/licenses/sdl2-license.txt
+      - mv /app/share/xpano/licenses /app/share/licenses/$FLATPAK_ID/xpano/
+    sources:
+      - type: git
+        url: https://github.com/krupkat/xpano
+        tag: v0.19.3
+        commit: 11a00d4ae964dabb7811412312ba69dea6522220
